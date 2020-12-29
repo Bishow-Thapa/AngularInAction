@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+a:link, a:visited { 
+    background-color: #848686; 
+    color: white; 
+    padding: 10px 25px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+ } 
+ a:hover, a:active {
+    background-color: #BD9696;
+ }

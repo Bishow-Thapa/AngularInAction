@@ -1,0 +1,85 @@
+<div style="text-align: center">
+  <h1>Welcome to {{ title | uppercase }}</h1>
+<div>
+
+<div>Months: 
+  <select (change)="changemonths($event)">
+    <option *ngFor="let i of months">{{i}}</option>
+  </select>
+</div>
+
+<div>
+  <span *ngIf="isavailable; then condition1 else condition2"> Condition is Valid. </span>
+  <ng-template #condition1> Condition1 is Valid. </ng-template>
+  <ng-template #condition2> Condition2 is Not Valid.</ng-template>
+</div>
+
+
+<br>
+
+<button (click)="myClickFunction($event)">
+  Click Me
+</button>
+
+
+<div style="text-align: center">
+  <span appChangeText> Welcome to the  {{ title | lowercase}}</span>
+</div>
+
+<div class="wrapper">
+  <div class="leftwrapper">
+    <h1>UpperCase pipe</h1>
+    <b> {{ title | uppercase }}</b>
+    <br>
+
+    <h1> Lowercase Pipe </h1>
+    <b> {{ title | lowercase }}</b>
+    <h1> Currency Pipe </h1>
+    <b> {{ 6389.01 | currency: "USD" }}</b>
+    <br>
+    <b> {{ 6589.30 | currency: "USD":true}} </b>
+    // Boolean true is used to get the sign of the currency.
+    <br>
+
+    <h1>Date Pipe</h1>
+    <b> {{ todaydate | date:'d/M/y' }}</b>
+    <br>
+    <b> {{ todaydate | date:'shortTime'}} </b>
+    
+
+    <h1>Decimal Pipe</h1>
+    <b> {{ 454.78787814 | number: '3.4-4' }} </b>
+    // 3 for main integer, 4 -4 are for integer to be displayed.
+  </div>
+
+  <div class="rightwrapper">
+    <h1> Json Pipe </h1>
+    <b> {{ jsonval | json}} </b>
+
+    <h1> Percent Pipe </h1>
+    <b>{{ 00.54564 | percent }}</b>
+
+    <h1> Slice Pipe </h1>
+    <b> {{ months | slice:2:6 }} </b>
+    // here 2 and 6 refers to the start and the end of index
+  </div>
+</div>
+
+
+<div class="routingClass">
+  <h1>Angular 7 Routing Demo</h1>
+  <nav>
+    <a href="" routerLink="/home">Home</a>
+    <a href="" routerLink="/contactus">ContactUs</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+<footer style="text-align: center;">
+  <h1> Custom Pipe </h1>
+  <b>Square root of 25 is: {{ 25 | sqrt}}</b>
+  <br>
+  <b>Square root of 729 is: {{ 729 | sqrt}}</b>
+  <br>
+  <b>Square root of 7 is: {{ 7 | sqrt}}</b>
+</footer>
